@@ -1,0 +1,14 @@
+<div class="d-flex w-100 m-2 p-2 card">
+    <h6>{{ post.title }}</h6>
+    <p>{{ post.body }}</p>
+    <a (click)="showComments()">
+        <i class="bi bi-caret-right-fill"></i>
+        Comments
+    </a>
+
+    <div *ngIf="!post._collapse">
+        <div class="comments-container">
+            <app-comment *ngFor="let comment of post._comments"></app-comment>
+        </div>
+    </div>
+</div>

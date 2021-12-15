@@ -1,0 +1,11 @@
+.rounded-pill {
+    border-radius: 0.25rem;
+}
+
+.input-group {
+    margin-top: 20px;
+}
+
+.form-control.search:focus {
+    box-shadow: 0 0 0 0.25rem rgba(49, 79, 114, 0.226);
+}

@@ -1,0 +1,12 @@
+.posts-list {
+    max-height: calc( 100vh - 200px ); 
+    overflow-y: auto;
+    border: 1px solid $gray;
+    border-radius: 0.25rem;
+    padding: 5px;
+    margin-bottom: 20px;
+
+    div {
+        padding-left: 0px;
+    }
+}
