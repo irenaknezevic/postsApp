@@ -1,14 +1,20 @@
-<div class="d-flex w-100 m-2 p-2 card">
-    <h6>{{ post.title }}</h6>
-    <p>{{ post.body }}</p>
-    <a (click)="showComments()">
-        <i class="bi bi-caret-right-fill"></i>
-        Comments
-    </a>
-
-    <div *ngIf="!post._collapse">
-        <div class="comments-container">
-            <app-comment *ngFor="let comment of post._comments"></app-comment>
+<div class="d-flex w-100 m-2 p-3 card">
+    <div class="post-info d-flex">
+        <a class="new-post-link" routerLink="/post">{{ post.title }}</a>
+        <p class="post-body">{{ post.body }}</p>
+        <p class="user-label text-right">{{ post._user?.name }}</p>
+    </div>
+    <div class="comments-container">
+        <a (click)="showComments()" class="comment-link" [ngClass]="{ 'active': !post._collapsedComments }">
+            <i class="bi" [ngClass]="post._collapsedComments ? 'bi-caret-right-fill' : 'bi-caret-down-fill'"></i>
+            Comments
+        </a>
+    
+        <div *ngIf="!post._collapsedComments && post._comments">
+            <div class="comments-container">
+                <app-comment *ngFor="let comment of post._comments" [comment]="comment"></app-comment>
+            </div>
         </div>
     </div>
+   
 </div>

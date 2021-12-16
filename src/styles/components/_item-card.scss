@@ -2,3 +2,15 @@ div.card {
     background-color: #fff;
     border-radius: 0.25rem;
 }
+
+div.card:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+div.post-info {
+    flex-direction: column;
+}
+
+.post-body {
+    margin-bottom: 5px !important;
+}

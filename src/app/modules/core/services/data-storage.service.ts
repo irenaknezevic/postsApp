@@ -35,7 +35,7 @@ export class DataStorageService {
                 this.setPostComments( adaptPost );
                 this.setPostUser( adaptPost );
 
-                adaptPost._collapse = true;
+                adaptPost._collapsedComments = true;
 
                 this.postsArray.push( adaptPost );
             });

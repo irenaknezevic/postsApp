@@ -18,10 +18,10 @@ export class PostListItemComponent implements OnInit {
   }
 
   public showComments() {
-    if( this.post._collapse ) {
-      this.post._collapse = false; 
+    if( this.post._collapsedComments ) {
+      this.post._collapsedComments = false; 
     } else {
-      this.post._collapse = true; 
+      this.post._collapsedComments = true; 
     }
   }
 

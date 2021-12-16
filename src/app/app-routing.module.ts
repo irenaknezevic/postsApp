@@ -16,7 +16,7 @@ const routes: Routes = [
     resolve: [ PostsResolverService ],
     children: [
       {
-        path: 'post/{id}',
+        path: 'post',
         component: PostComponent
       }
     ]

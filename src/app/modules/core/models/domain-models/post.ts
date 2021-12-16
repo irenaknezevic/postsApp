@@ -10,7 +10,7 @@ export class Post {
         public title: string,
         public body: string,
 
-        public _collapse?: boolean,
+        public _collapsedComments?: boolean,
         public _user?: User,
         public _comments?: Comment[]
     ) { }

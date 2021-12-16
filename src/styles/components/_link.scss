@@ -1,0 +1,33 @@
+.comment-link {
+    color: $gray !important;
+    text-decoration: none;
+    width: fit-content;
+}
+
+.comment-link.active {
+    color: $blue !important;
+}
+
+.comment-link:hover {
+    color: $blue !important;
+}
+
+.new-post-link {
+    color: black;
+    width: fit-content;
+    text-transform: uppercase;
+    display: inline-block;
+    font-size: 30;
+    text-decoration: none;
+    background-image: linear-gradient(to right, $orange, $orange);
+    background-position: bottom left;
+    background-repeat: no-repeat;
+    background-size: 50% 2px;
+    transition: background-size .5s ease;
+}
+
+.new-post-link:hover {
+    color: $orange;
+    background-size: 100% 2px;
+    text-decoration: none;
+}

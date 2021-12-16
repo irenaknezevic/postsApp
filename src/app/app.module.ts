@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PostService } from './modules/core/services/post.service';
 import { PostListItemComponent } from './modules/posts/posts-list/post-list-item/post-list-item.component';
 import { CommentComponent } from './modules/shared/components/comment/comment.component';
+import { SearchComponent } from './modules/shared/components/search/search.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CommentComponent } from './modules/shared/components/comment/comment.co
     PostComponent,
     PostsListComponent,
     PostListItemComponent,
-    CommentComponent
+    CommentComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
