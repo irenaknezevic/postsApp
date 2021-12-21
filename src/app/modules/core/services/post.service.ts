@@ -16,4 +16,9 @@ export class PostService {
     public getPosts() {
         return this.posts.slice();
     }
+    
+    public getPostById( postId: number ) {
+        let post = this.posts.find( post => post.id === postId )
+        return post;
+    }
 }

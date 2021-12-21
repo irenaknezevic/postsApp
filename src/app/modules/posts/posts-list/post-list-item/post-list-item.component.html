@@ -1,6 +1,6 @@
 <div class="d-flex w-100 m-2 p-3 card">
     <div class="post-info d-flex">
-        <a class="new-post-link" routerLink="/post">{{ post.title }}</a>
+        <a class="new-post-link" [routerLink]="['/post', post.id]">{{ post.title }}</a>
         <p class="post-body">{{ post.body }}</p>
         <p class="user-label text-right">{{ post._user?.name }}</p>
     </div>

@@ -13,13 +13,11 @@ const routes: Routes = [
   {
     path: 'posts',
     component: PostsComponent,
-    resolve: [ PostsResolverService ],
-    children: [
-      {
-        path: 'post',
-        component: PostComponent
-      }
-    ]
+    resolve: [ PostsResolverService ]
+  },
+  {
+    path: 'post/:id',
+    component: PostComponent
   }
 ];
 
