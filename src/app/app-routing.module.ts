@@ -16,17 +16,13 @@ const routes: Routes = [
     resolve: [ PostsResolverService ]
   },
   {
-    path: 'post',
-    redirectTo: '/posts',
-    pathMatch: 'full'
-  },
-  {
     path: 'post/:id',
     component: PostComponent
   },
   {
     path: '**',
-    component: PostsComponent
+    redirectTo: '/posts',
+    pathMatch: 'full'
   }
 ];
 
