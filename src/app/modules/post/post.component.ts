@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Post } from '../core/models/domain-models/post';
 import { PostService } from '../core/services/post.service';
 
@@ -13,12 +13,17 @@ export class PostComponent implements OnInit {
 
   constructor(
     private _route: ActivatedRoute,
+    private _router: Router,
     private postSvc: PostService
   ) { }
 
   ngOnInit() {
     const postId = +this._route.snapshot.params['id'];
     this.post = this.postSvc.getPostById( postId );
+    
+    if( !this.post ) {
+      this._router.navigate( ['/posts'] );
+    }
   }
 
   public showComments() {
