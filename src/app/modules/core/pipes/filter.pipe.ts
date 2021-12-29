@@ -4,17 +4,17 @@ import { Post } from "../models/domain-models/post";
 @Pipe({ name: 'postFilter' })
 export class FilterPipe implements PipeTransform {
     transform( posts: Post[], searchText: string ): any[] {
-        if (!posts) {
+        if ( !posts ) {
           return [];
         }
         
-        if (!searchText) {
+        if ( !searchText || searchText == '' ) {
           return posts;
         }
 
         searchText = searchText.toString().toLocaleLowerCase();
     
-        return posts.filter( post => {
+        return posts.filter( post => {          
           return post.title.toString().toLocaleLowerCase().includes(searchText);
         } );
     }

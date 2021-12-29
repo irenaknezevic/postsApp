@@ -16,7 +16,7 @@ export class SearchComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public onSearchChange(event: any) {
+  public onSearchChange( event: any ) {
     this.postSvc.searchText.next( event.value );
   }
 }

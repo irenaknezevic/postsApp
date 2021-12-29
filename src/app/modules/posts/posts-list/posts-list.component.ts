@@ -19,9 +19,7 @@ export class PostsListComponent implements OnInit {
     this.posts = this.postSvc.getPosts();
 
     this.postSvc.searchText.subscribe( value => {
-      if( value ) {
-        this.filterText = value;
-      }
+      this.filterText = value;
     } )
   }
 
