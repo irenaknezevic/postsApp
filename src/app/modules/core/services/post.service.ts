@@ -1,11 +1,12 @@
 import { Injectable } from "@angular/core";
-import { Subject } from "rxjs";
-import { PostDTO } from "../models/data-transfer-object/postDTO";
+import { BehaviorSubject } from "rxjs";
 import { Post } from "../models/domain-models/post";
 
 @Injectable()
 export class PostService {
     private posts: Post[] = [];
+
+    public searchText = new BehaviorSubject<any> ( null );
 
     constructor() {}
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PostService } from 'src/app/modules/core/services/post.service';
 
 @Component({
   selector: 'app-search',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements OnInit {
+  public searchText = '';
 
-  constructor() { }
+  constructor(
+    private postSvc: PostService
+  ) { }
 
   ngOnInit(): void {
   }
 
+  public onSearchChange(event: any) {
+    this.postSvc.searchText.next( event.value );
+  }
 }

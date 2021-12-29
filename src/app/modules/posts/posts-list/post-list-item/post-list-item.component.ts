@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { PostDTO } from 'src/app/modules/core/models/data-transfer-object/postDTO';
 import { Post } from 'src/app/modules/core/models/domain-models/post';
 
 @Component({
@@ -13,9 +12,7 @@ export class PostListItemComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-    // console.log('post: ', this.post);
-  }
+  ngOnInit(): void { }
 
   public showComments() {
     if( this.post._collapsedComments ) {

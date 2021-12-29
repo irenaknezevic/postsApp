@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { PostDTO } from '../../core/models/data-transfer-object/postDTO';
 import { Post } from '../../core/models/domain-models/post';
 import { PostService } from '../../core/services/post.service';
 
@@ -11,16 +9,20 @@ import { PostService } from '../../core/services/post.service';
 })
 export class PostsListComponent implements OnInit {
   public posts: Post[] = [];
-
+  public filterText: string = ''; 
+  
   constructor(
-    private postSvc: PostService,
-    private router: Router,
-    private route: ActivatedRoute
+    private postSvc: PostService
   ) { }
 
   ngOnInit(): void {
     this.posts = this.postSvc.getPosts();
-    console.log('this.posts: ', this.posts);
+
+    this.postSvc.searchText.subscribe( value => {
+      if( value ) {
+        this.filterText = value;
+      }
+    } )
   }
 
 }

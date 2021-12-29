@@ -12,6 +12,8 @@ import { PostService } from './modules/core/services/post.service';
 import { PostListItemComponent } from './modules/posts/posts-list/post-list-item/post-list-item.component';
 import { CommentComponent } from './modules/shared/components/comment/comment.component';
 import { SearchComponent } from './modules/shared/components/search/search.component';
+import { FilterPipe } from './modules/core/pipes/filter.pipe';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,12 +24,14 @@ import { SearchComponent } from './modules/shared/components/search/search.compo
     PostsListComponent,
     PostListItemComponent,
     CommentComponent,
-    SearchComponent
+    SearchComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [ PostService ],
   bootstrap: [AppComponent]
