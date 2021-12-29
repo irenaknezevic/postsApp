@@ -3,11 +3,11 @@ import { UserDTO } from "../data-transfer-object/userDTO";
 
 export class User {
     constructor(
-        public id?: number,
-        public name?: string,
-        public username?: string,
-        public email?: string,
-        public address?: AddressDTO
+        public id: number,
+        public name: string,
+        public username: string,
+        public email: string,
+        public address: AddressDTO
     ) {}
 
     static adapt( data: UserDTO ): User {
